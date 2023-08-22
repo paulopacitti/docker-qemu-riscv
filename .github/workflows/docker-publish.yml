@@ -7,14 +7,12 @@ name: Docker
 
 on:
   push:
-    branches:
-      - main
     tags:
       - v*.*.* # Publish semver tags as releases.
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: "qemu-riscv"
+  IMAGE_NAME: ${{ github.actor }}/qemu-riscv
 
 jobs:
   build:
