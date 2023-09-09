@@ -9,6 +9,7 @@ on:
   push:
     tags:
       - v*.*.* # Publish semver tags as releases.
+  workflow_dispatch: # Allow manual triggering of workflow.
 
 env:
   REGISTRY: ghcr.io
@@ -57,8 +58,7 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            # set latest tag for master branch
+          tags: | # set latest tag for master branch
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
 
       # Build and push Docker image with Buildx (don't push on PR)
