@@ -12,7 +12,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.actor }}/qemu-riscv
+  IMAGE_NAME: qemu-riscv
 
 jobs:
   build:
