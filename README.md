@@ -15,6 +15,11 @@ I created this image while I was developing cryptographic optimizations of know 
 - `qemu-riscv32`: User space emulation of RISC-V 32 bits;
 - `qemu-riscv64`: User space emulation of RISC-V 64 bits;
 
+## Roadmap
+
+1. [x] QEMU for RISC-V for cross debugging
+2. [ ] `riscv-gnu-toolchain` for cross-compilation  
+
 ## Cross-debugging example
 This image is very useful to create a _light linux VM_ for cross-debugging RISC-V, using `qemu` and `gdb` (the `gdb` required is the one installed together with `riscv-gnu-toolchain`). The `example/` folder in this repo contain a simple C code used this tutorial:
 
